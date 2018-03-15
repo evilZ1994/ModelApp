@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="calculator_tab_title">
+        <item>商业贷款</item>
+        <item>公积金贷款</item>
+        <item>组合贷款</item>
+    </string-array>
+</resources>

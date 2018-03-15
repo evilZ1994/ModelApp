@@ -6,4 +6,26 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="calculate_way">计算方式:</string>
+    <string name="by_loan_limit">按贷款额度算</string>
+    <string name="by_area">按面积算</string>
+    <string name="house_area">房屋面积:</string>
+    <string name="square_meter">平米</string>
+    <string name="unit_price">平米单价:</string>
+    <string name="unit_price_unit">元/平米</string>
+    <string name="total_price">房屋总价:</string>
+    <string name="total_price_unit">万元</string>
+    <string name="house_num">购房性质:</string>
+    <string name="one_house">一套房</string>
+    <string name="two_house">二套房</string>
+    <string name="down_payment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;首付:</string>
+    <string name="loan_money">贷款金额:</string>
+    <string name="loan_limit">贷款期限:</string>
+    <string name="year_rate">&#160;&#160;&#160;&#160;&#160;年利率:</string>
+    <string name="repay_way">还款方式:</string>
+    <string name="equal_interest">等额本息</string>
+    <string name="equal_corpus">等额本金</string>
+    <string name="calculate">计算</string>
+    <string name="reset">重置</string>
+    <string name="hundred_char">%</string>
 </resources>
