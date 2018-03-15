@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import codekiller.me.modelapp.Calculator.BusinessFragment;
+import codekiller.me.modelapp.Calculator.BusinessLoan.BusinessFragment;
 import codekiller.me.modelapp.Calculator.CalculatorPagerAdapter;
 import codekiller.me.modelapp.Calculator.CombineFragment;
 import codekiller.me.modelapp.Calculator.FundFragment;
