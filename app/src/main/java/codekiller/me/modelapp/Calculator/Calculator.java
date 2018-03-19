@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import codekiller.me.modelapp.R;
+
 /**
  * Created by R2D2 on 2018/3/15.
  */
@@ -24,13 +26,34 @@ public class Calculator {
     }
 
     /**
+     * 计算组合贷款
+     * @param businessMoney 商业贷款金额
+     * @param fundMoney 公积金金额
+     * @param businessRate 商业贷款年利率
+     * @param fundRate 公积金年利率
+     * @param month 期次
+     * @param repayWay 还款方式
+     * @return 计算结果
+     */
+    public List<Map<String, Double>> combineLoan(double businessMoney, double fundMoney, double businessRate, double fundRate, double month, int repayWay){
+        double money = businessMoney + fundMoney;
+        double rate = businessMoney/money*businessRate + fundMoney/money*fundRate;
+        //rate = new BigDecimal(rate).setScale(5, RoundingMode.HALF_UP).doubleValue();
+        if (repayWay == R.id.repay_way_btn1){
+            return debx(money, month, rate);
+        }else {
+            return debj(money, month, rate);
+        }
+    }
+
+    /**
      * 等额本息计算方式
      * @param year_lilv 年利率
      * @param money 贷款金额
      * @param month 贷款期次（月）
      * @return 计算结果，列表的最后一项是最高月供、累计还款总额等
      */
-    public List<Map<String, Double>> debx(double year_lilv, double money, double month) {
+    public List<Map<String, Double>> debx(double money, double month, double year_lilv) {
         money = money*10000;
         double year = month/12;
         int year_1 = (int) (year/5);
@@ -93,7 +116,7 @@ public class Calculator {
      * @param month 贷款期次（月）
      * @return 计算结果，列表的最后一项是最高月供、累计还款总额等
      */
-    public List<Map<String, Double>> debj(double year_lilv, double money, double month) {
+    public List<Map<String, Double>> debj(double money, double month, double year_lilv) {
         money = money*10000;
         double year = month/12;
         int year_1 = (int) (year/5);
@@ -137,17 +160,17 @@ public class Calculator {
     }
 
     /**
-     * 计算房屋总价
+     * 计算房屋总价，单位万元
      * @param mj 房屋面积
      * @param pmdj 平米单价
      * @return 房屋总价
      */
     public double js_fwzj(double mj, double pmdj) {
-        return mj*pmdj;
+        return mj*pmdj/10000;
     }
 
     /**
-     * 计算贷款金额
+     * 计算贷款金额，单位万元
      * @param fwzj 房屋总价
      * @param sf 首付比例
      * @return 贷款金额

@@ -12,10 +12,16 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import codekiller.me.modelapp.Calculator.BusinessLoan.BusinessContract;
 import codekiller.me.modelapp.Calculator.BusinessLoan.BusinessFragment;
+import codekiller.me.modelapp.Calculator.BusinessLoan.BusinessPresenter;
 import codekiller.me.modelapp.Calculator.CalculatorPagerAdapter;
-import codekiller.me.modelapp.Calculator.CombineFragment;
-import codekiller.me.modelapp.Calculator.FundFragment;
+import codekiller.me.modelapp.Calculator.CombineLoan.CombineContract;
+import codekiller.me.modelapp.Calculator.CombineLoan.CombineFragment;
+import codekiller.me.modelapp.Calculator.CombineLoan.CombinePresenter;
+import codekiller.me.modelapp.Calculator.FundLoan.FundContract;
+import codekiller.me.modelapp.Calculator.FundLoan.FundFragment;
+import codekiller.me.modelapp.Calculator.FundLoan.FundPresenter;
 
 
 /**
@@ -32,7 +38,7 @@ public class CalculatorFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static CalculatorFragment getInstance(){
+    public static CalculatorFragment newInstance(){
         return new CalculatorFragment();
     }
 
@@ -51,9 +57,17 @@ public class CalculatorFragment extends Fragment {
 
     private void initFragments() {
         fragments = new ArrayList<>();
-        fragments.add(BusinessFragment.getInstance());
-        fragments.add(FundFragment.getInstance());
-        fragments.add(CombineFragment.getInstance());
+        BusinessFragment businessFragment = BusinessFragment.newInstance();
+        BusinessContract.Presenter businessPresenter = new BusinessPresenter(businessFragment);
+        fragments.add(businessFragment);
+
+        FundFragment fundFragment = FundFragment.newInstance();
+        FundContract.Presenter fundPresenter = new FundPresenter(fundFragment);
+        fragments.add(fundFragment);
+
+        CombineFragment combineFragment = CombineFragment.newInstance();
+        CombineContract.Presenter combinePresenter = new CombinePresenter(combineFragment);
+        fragments.add(combineFragment);
     }
 
     private void initViews(View view) {

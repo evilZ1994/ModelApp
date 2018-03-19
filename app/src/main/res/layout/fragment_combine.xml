@@ -1,13 +1,182 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="codekiller.me.modelapp.Calculator.CombineFragment">
+    android:orientation="vertical"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    tools:context="codekiller.me.modelapp.Calculator.CombineLoan.CombineFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/business_money_title"
+            android:text="@string/business_loan_money"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/business_money_input"
+            android:inputType="number|numberDecimal"
+            android:maxLines="1"
+            android:layout_toEndOf="@+id/business_money_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="@string/total_price_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
 
-</FrameLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/fund_money_title"
+            android:text="@string/fund_loan_money"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/fund_money_input"
+            android:inputType="number|numberDecimal"
+            android:maxLines="1"
+            android:layout_toEndOf="@+id/fund_money_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="@string/total_price_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/loan_limit_title"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loan_limit"
+            android:gravity="center" />
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/loan_limit_spinner"
+            android:layout_toEndOf="@+id/loan_limit_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/business_rate_title"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/business_year_rate"
+            android:gravity="center" />
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/business_rate_spinner"
+            android:layout_toEndOf="@+id/business_rate_title"
+            android:layout_centerVertical="true"
+            android:entries="@array/year_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/business_rate_input"
+            android:layout_toEndOf="@+id/business_rate_spinner"
+            android:maxLines="1"
+            android:inputType="number|numberDecimal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="@string/hundred_char"
+            android:layout_toEndOf="@+id/business_rate_input"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/fund_rate_title"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fund_year_rate"
+            android:gravity="center" />
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/fund_rate_input"
+            android:layout_toEndOf="@+id/fund_rate_title"
+            android:maxLines="1"
+            android:inputType="number|numberDecimal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="@string/hundred_char"
+            android:layout_toEndOf="@+id/fund_rate_input"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/repay_way_title"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/repay_way"
+            android:gravity="center" />
+        <RadioGroup
+            android:id="@+id/repay_way"
+            android:layout_toEndOf="@+id/repay_way_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <RadioButton
+                android:id="@+id/repay_way_btn1"
+                android:text="@string/equal_interest"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:id="@+id/repay_way_btn2"
+                android:text="@string/equal_corpus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/calculate_btn"
+            android:text="@string/calculate"
+            android:theme="@style/CalculateButton"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/reset_btn"
+            android:text="@string/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

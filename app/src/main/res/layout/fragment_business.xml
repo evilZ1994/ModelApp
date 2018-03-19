@@ -55,6 +55,8 @@
                 android:layout_height="wrap_content" />
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/area_input"
+                android:inputType="number|numberDecimal"
+                android:maxLines="1"
                 android:layout_toEndOf="@+id/house_area_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -76,6 +78,8 @@
                 android:layout_height="wrap_content" />
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/unit_price_input"
+                android:inputType="number|numberDecimal"
+                android:maxLines="1"
                 android:layout_toEndOf="@+id/unit_price_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -98,6 +102,11 @@
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/total_price_input"
                 android:layout_toEndOf="@+id/total_price_title"
+                android:inputType="number|numberDecimal"
+                android:maxLines="1"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:clickable="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
@@ -118,6 +127,7 @@
                 android:text="@string/house_num"
                 android:gravity="center" />
             <RadioGroup
+                android:id="@+id/house_num"
                 android:layout_toEndOf="@+id/house_num_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -149,6 +159,7 @@
             <android.support.v7.widget.AppCompatSpinner
                 android:id="@+id/down_payment_spinner"
                 android:layout_toEndOf="@+id/down_payment_title"
+                android:entries="@array/down_pay"
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"/>
         </RelativeLayout>
@@ -158,14 +169,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:id="@+id/load_money"
+            android:id="@+id/load_money_title"
             android:text="@string/loan_money"
             android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/loan_money_title"
-            android:layout_toEndOf="@+id/load_money"
+            android:id="@+id/loan_money_input"
+            android:inputType="number|numberDecimal"
+            android:maxLines="1"
+            android:layout_toEndOf="@+id/load_money_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <TextView
@@ -205,12 +218,14 @@
             android:id="@+id/year_rate_spinner"
             android:layout_toEndOf="@+id/year_rate_title"
             android:layout_centerVertical="true"
+            android:entries="@array/year_rate"
             android:layout_width="220dp"
             android:layout_height="wrap_content"/>
         <android.support.design.widget.TextInputEditText
             android:id="@+id/year_rate_input"
             android:layout_toEndOf="@+id/year_rate_spinner"
             android:maxLines="1"
+            android:inputType="number|numberDecimal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
@@ -232,6 +247,7 @@
             android:text="@string/repay_way"
             android:gravity="center" />
         <RadioGroup
+            android:id="@+id/repay_way"
             android:layout_toEndOf="@+id/repay_way_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

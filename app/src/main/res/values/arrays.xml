@@ -5,4 +5,46 @@
         <item>公积金贷款</item>
         <item>组合贷款</item>
     </string-array>
+    
+    <string-array name="down_pay">
+        <item>2成</item>
+        <item>3成</item>
+        <item>4成</item>
+        <item>5成</item>
+        <item>6成</item>
+        <item>7成</item>
+        <item>8成</item>
+        <item>9成</item>
+    </string-array>
+    <string-array name="down_pay_value">
+        <item>0.2</item>
+        <item>0.3</item>
+        <item>0.4</item>
+        <item>0.5</item>
+        <item>0.6</item>
+        <item>0.7</item>
+        <item>0.8</item>
+        <item>0.9</item>
+    </string-array>
+
+    <string-array name="year_rate">
+        <item>最新基准利率7折</item>
+        <item>最新基准利率8折</item>
+        <item>最新基准利率8.5折</item>
+        <item>最新基准利率9折</item>
+        <item>最新基准利率</item>
+        <item>最新基准利率1.1倍</item>
+        <item>最新基准利率1.2倍</item>
+        <item>最新基准利率1.3倍</item>
+    </string-array>
+    <string-array name="year_rate_multiple">
+        <item>0.7</item>
+        <item>0.8</item>
+        <item>0.85</item>
+        <item>0.9</item>
+        <item>1</item>
+        <item>1.1</item>
+        <item>1.2</item>
+        <item>1.3</item>
+    </string-array>
 </resources>

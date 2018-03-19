@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/total_interest_wrapper"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/total_repay_wrapper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/total_interest_title"
+                android:text="@string/total_interest"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:background="@color/blue"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/total_interest"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/total_repay_wrapper"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/total_repay_title"
+                android:text="@string/total_repay_title"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:background="@color/blue"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/total_repay_money"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/monthly_wrapper"
+            android:orientation="horizontal"
+            android:layout_alignStart="@+id/total_interest_wrapper"
+            android:layout_below="@id/total_interest_wrapper"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/monthly_pay_title"
+                android:text="@string/monthly_pay"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:background="@color/blue"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginTop="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/monthly_pay"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginTop="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/least_wrapper"
+            android:orientation="horizontal"
+            android:layout_alignStart="@+id/total_repay_wrapper"
+            android:layout_below="@+id/total_repay_wrapper"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/least_monthly_money"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:background="@color/blue"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginTop="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/least_monthly_money"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginTop="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <include layout="@layout/calculate_result_item"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

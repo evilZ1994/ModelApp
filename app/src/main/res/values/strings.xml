@@ -28,4 +28,12 @@
     <string name="calculate">计算</string>
     <string name="reset">重置</string>
     <string name="hundred_char">%</string>
+    <string name="total_interest">利息总额</string>
+    <string name="total_repay_title">累计还款</string>
+    <string name="monthly_pay">每月月供</string>
+    <string name="least_monthly_money">最低月薪</string>
+    <string name="business_loan_money">商业贷款金额:</string>
+    <string name="fund_loan_money">公积金贷款金额:</string>
+    <string name="fund_year_rate">公积金贷款利率:</string>
+    <string name="business_year_rate">商业贷款年利率:</string>
 </resources>

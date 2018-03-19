@@ -16,7 +16,7 @@ public class FirstFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static FirstFragment getInstance(){
+    public static FirstFragment newInstance(){
         return new FirstFragment();
     }
 

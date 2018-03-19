@@ -18,7 +18,7 @@ public class AboutFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static AboutFragment getInstance(){
+    public static AboutFragment newInstance(){
         return new AboutFragment();
     }
 
