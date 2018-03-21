@@ -4,16 +4,20 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/poly_estate"
+        android:icon="@drawable/ic_business_black_24dp"
+        android:title="@string/poly_health_valley"/>
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/ic_layers_black_24dp"
+        android:title="@string/poly_brand" />
 
     <item
         android:id="@+id/calculator"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_calculator" />
-
-    <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_about" />
-
+        android:title="@string/loan_calculator" />
 </menu>

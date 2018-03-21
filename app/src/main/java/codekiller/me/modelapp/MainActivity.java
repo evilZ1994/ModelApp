@@ -2,6 +2,7 @@ package codekiller.me.modelapp;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -9,13 +10,22 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import codekiller.me.modelapp.Calculator.CalculatorFragment;
+import codekiller.me.modelapp.PolyBrand.PolyBrandFragment;
+import codekiller.me.modelapp.PolyValley.ValleyFragment;
+
 public class MainActivity extends AppCompatActivity {
     private FirstFragment firstFragment;
     private CalculatorFragment calculatorFragment;
-    private AboutFragment aboutFragment;
+    private PolyBrandFragment polyBrandFragment;
+    private ValleyFragment valleyFragment;
     private Fragment[] fragments;
     private int lastShownFragment;
 
+    private static final String FIRST_FRAGMENT_KEY = "first_fragment";
+    private static final String VALLEY_FRAGMENT_KEY = "valley_fragment";
+    private static final String ABOUT_FRAGMENT_KEY = "about_fragment";
+    private static final String CALCULATOR_FRAGMENT_KEY = "calculator_fragment";
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -29,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
                         lastShownFragment = 0;
                     }
                     return true;
-                case R.id.calculator:
-                    if(lastShownFragment != 1){
+                case R.id.poly_estate:
+                    if (lastShownFragment != 1){
                         switchFragment(lastShownFragment, 1);
                         lastShownFragment = 1;
                     }
@@ -39,6 +49,12 @@ public class MainActivity extends AppCompatActivity {
                     if(lastShownFragment != 2){
                         switchFragment(lastShownFragment, 2);
                         lastShownFragment = 2;
+                    }
+                    return true;
+                case R.id.calculator:
+                    if(lastShownFragment != 3){
+                        switchFragment(lastShownFragment, 3);
+                        lastShownFragment = 3;
                     }
                     return true;
             }
@@ -56,7 +72,20 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        initFragments();
+        if (savedInstanceState != null){
+            firstFragment = (FirstFragment) getSupportFragmentManager().getFragment(savedInstanceState, FIRST_FRAGMENT_KEY);
+            valleyFragment = (ValleyFragment) getSupportFragmentManager().getFragment(savedInstanceState, VALLEY_FRAGMENT_KEY);
+            polyBrandFragment = (PolyBrandFragment) getSupportFragmentManager().getFragment(savedInstanceState, ABOUT_FRAGMENT_KEY);
+            calculatorFragment = (CalculatorFragment) getSupportFragmentManager().getFragment(savedInstanceState, CALCULATOR_FRAGMENT_KEY);
+            fragments = new Fragment[]{firstFragment, valleyFragment, polyBrandFragment, calculatorFragment};
+            lastShownFragment = 0;
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.content_frame, firstFragment)
+                    .show(firstFragment)
+                    .commit();
+        } else {
+            initFragments();
+        }
     }
 
     /**
@@ -78,9 +107,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void initFragments() {
         firstFragment = FirstFragment.newInstance();
+        valleyFragment = ValleyFragment.newInstance();
+        polyBrandFragment = PolyBrandFragment.newInstance();
         calculatorFragment = CalculatorFragment.newInstance();
-        aboutFragment = AboutFragment.newInstance();
-        fragments = new Fragment[]{firstFragment, calculatorFragment, aboutFragment};
+        fragments = new Fragment[]{firstFragment, valleyFragment, polyBrandFragment, calculatorFragment};
         lastShownFragment = 0;
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.content_frame, firstFragment)
@@ -97,4 +127,20 @@ public class MainActivity extends AppCompatActivity {
         transaction.show(fragments[index]).commitAllowingStateLoss();
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        if (firstFragment != null){
+            getSupportFragmentManager().putFragment(outState, FIRST_FRAGMENT_KEY, firstFragment);
+        }
+        if (valleyFragment != null){
+            getSupportFragmentManager().putFragment(outState, VALLEY_FRAGMENT_KEY, valleyFragment);
+        }
+        if (polyBrandFragment != null){
+            getSupportFragmentManager().putFragment(outState, ABOUT_FRAGMENT_KEY, polyBrandFragment);
+        }
+        if (calculatorFragment != null){
+            getSupportFragmentManager().putFragment(outState, CALCULATOR_FRAGMENT_KEY, calculatorFragment);
+        }
+        super.onSaveInstanceState(outState, outPersistentState);
+    }
 }

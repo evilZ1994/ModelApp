@@ -1,28 +1,22 @@
-package codekiller.me.modelapp.Calculator;
+package codekiller.me.modelapp.Adapter;
 
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.List;
-
-import codekiller.me.modelapp.R;
 
 /**
  * Created by Lollipop on 2018/3/15.
  */
 
-public class CalculatorPagerAdapter extends FragmentPagerAdapter {
+public class MyFragmentPagerAdapter extends android.support.v4.app.FragmentStatePagerAdapter {
     private String[] titles;
-    private Context context;
     private List<Fragment> fragments;
 
-    public CalculatorPagerAdapter(FragmentManager fm, Context context, List<Fragment> fragments) {
+    public MyFragmentPagerAdapter(FragmentManager fm, String[] titles, List<Fragment> fragments) {
         super(fm);
-        this.context = context;
         this.fragments = fragments;
-        titles = context.getResources().getStringArray(R.array.calculator_tab_title);
+        this.titles = titles;
     }
 
     @Override

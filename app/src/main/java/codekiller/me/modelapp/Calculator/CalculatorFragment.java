@@ -1,4 +1,4 @@
-package codekiller.me.modelapp;
+package codekiller.me.modelapp.Calculator;
 
 
 import android.os.Bundle;
@@ -15,13 +15,14 @@ import java.util.List;
 import codekiller.me.modelapp.Calculator.BusinessLoan.BusinessContract;
 import codekiller.me.modelapp.Calculator.BusinessLoan.BusinessFragment;
 import codekiller.me.modelapp.Calculator.BusinessLoan.BusinessPresenter;
-import codekiller.me.modelapp.Calculator.CalculatorPagerAdapter;
+import codekiller.me.modelapp.Adapter.MyFragmentPagerAdapter;
 import codekiller.me.modelapp.Calculator.CombineLoan.CombineContract;
 import codekiller.me.modelapp.Calculator.CombineLoan.CombineFragment;
 import codekiller.me.modelapp.Calculator.CombineLoan.CombinePresenter;
 import codekiller.me.modelapp.Calculator.FundLoan.FundContract;
 import codekiller.me.modelapp.Calculator.FundLoan.FundFragment;
 import codekiller.me.modelapp.Calculator.FundLoan.FundPresenter;
+import codekiller.me.modelapp.R;
 
 
 /**
@@ -31,7 +32,7 @@ public class CalculatorFragment extends Fragment {
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    private CalculatorPagerAdapter pagerAdapter;
+    private MyFragmentPagerAdapter pagerAdapter;
     private List<Fragment> fragments;
 
     public CalculatorFragment() {
@@ -73,7 +74,7 @@ public class CalculatorFragment extends Fragment {
     private void initViews(View view) {
         tabLayout = view.findViewById(R.id.tab);
         viewPager = view.findViewById(R.id.view_pager);
-        pagerAdapter = new CalculatorPagerAdapter(getActivity().getSupportFragmentManager(), getContext(), fragments);
+        pagerAdapter = new MyFragmentPagerAdapter(getActivity().getSupportFragmentManager(), getContext().getResources().getStringArray(R.array.calculator_tab_title), fragments);
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
     }

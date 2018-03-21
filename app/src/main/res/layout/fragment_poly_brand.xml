@@ -1,17 +1,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context="codekiller.me.modelapp.Calculator.CalculatorFragment">
+    tools:context="codekiller.me.modelapp.PolyBrand.PolyBrandFragment">
 
     <android.support.design.widget.TabLayout
-        android:id="@+id/tab"
+        android:id="@+id/brand_tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/view_pager"
+        android:id="@+id/brand_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"/>
 </LinearLayout>

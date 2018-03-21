@@ -5,6 +5,18 @@
         <item>公积金贷款</item>
         <item>组合贷款</item>
     </string-array>
+
+    <string-array name="valley_tab_title">
+        <item>项目概况</item>
+        <item>户型介绍</item>
+        <item>关注我们</item>
+    </string-array>
+
+    <string-array name="brand_tab_title">
+        <item>中国保利</item>
+        <item>保利地产</item>
+        <item>保利成都</item>
+    </string-array>
     
     <string-array name="down_pay">
         <item>2成</item>
